@@ -1,5 +1,5 @@
 
-# QUESTION 1 : Concurrent Quicksort
+# Concurrent Quicksort
 
 ## AIM
 
