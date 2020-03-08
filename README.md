@@ -130,15 +130,18 @@ waitState ​ (no rider in cab), ​ onRidePremier​ , ​ onRidePoolFull ​ (
 riders), ​ onRidePoolOne​ (pool ride with only one rider).
 As a part of this system you need to implement the following functionalities.
   1. Riders​ :
+    
     a. BookCab: This function takes three inputs namely ​ cabType ​ ,
     maxWaitTime , ​ ​ RideTime ​ . If the rider doesn’t find any cab (all cabs are
     in usage) until ​ maxWaitTime ​ he exits from the system with ​ TimeOut
     message.
+    
     b. MakePayment: This function should be called by rider only after the
     end of the ride. If all the K payment servers are busy, then the rider
     should wait for the payment servers to get free. After payment is done
     rider can exit from the system.
   2. Drivers​ :
+    
     a. AcceptRide: If ride is premier cab in ​ waitState ​ should accept ride and
     change its state to ​ onRidePremier . ​ If the ride is pool and there is a cab
     with state ​ onRidePoolOne ​ then that cab should accept the ride and
@@ -148,9 +151,11 @@ As a part of this system you need to implement the following functionalities.
     time gap between accept rider and pickup rider, i.e., ride starts
     immediately after accepting ride. If there are multiple cabs available
     with required state take any random cab.
+    
     b. OnRide: When pool cab is on ride and state is ​ onRidePoolOne ​ then
     driver can accept another pool ride. No new rider is accepted when cab
     is on premier ride.
+    
     c. EndRide: The driver ends the ride after completion of the ​ RideTime ​ of
     the rider. If the ride is a premier it goes to ​ waitState ​ (ready to accept
     new rides) once ride is done. If cab’s state is ​ onRidePoolOne ​ then
@@ -159,6 +164,7 @@ As a part of this system you need to implement the following functionalities.
     accept another pool rider). Driver or cab need not wait for the payment
     to be done by the rider.
   3. Payment Servers:
+    
     a. Accept payment: Payment servers accepts a payment and assume the
     payment time is constant for all the riders.
     
